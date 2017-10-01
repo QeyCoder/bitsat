@@ -5,15 +5,21 @@
 public class ExcelColumn {
 
 
-    public int titleToNumber(String a) {
-        int sum = 0;
+    public String titleToNumber(int no) {
+        StringBuilder finalBuilder = new StringBuilder();
 
-        for (int i = a.length() - 1; i >= 0; i--) {
-            sum += Math.pow(26, a.length() - i - 1) * (a.charAt(i) - 64);
-
+        while (no > 0) {
+            int remainder = no % 26;
+            if (remainder == 0) {
+                finalBuilder.append("Z");
+                no = no / 26 - 1;
+            } else {
+                finalBuilder.append(Character.toChars(remainder + 64));
+                no = no / 26;
         }
 
-        return sum;
+        }
+        return finalBuilder.reverse().toString();
 
     }
 
@@ -21,9 +27,7 @@ public class ExcelColumn {
     public static void main(String[] args) {
         ExcelColumn excelColumn = new ExcelColumn();
         //System.out.println(excelColumn.titleToNumber("A"));
-        System.out.println(excelColumn.titleToNumber("AAA"));
-        System.out.println(excelColumn.titleToNumber("AB"));
-        System.out.println(excelColumn.titleToNumber("Z"));
+        System.out.println(excelColumn.titleToNumber(28));
     }
 
 }
