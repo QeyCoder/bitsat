@@ -1,1 +1,2 @@
-# bitsat
+# BITSAT
+Collection of Algo Problems
