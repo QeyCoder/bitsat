@@ -1,67 +1,34 @@
-package day16;
+package day30;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigInteger;
 import java.util.InputMismatchException;
 
-/**
- * Created by Gaurav on 14/11/17.
- */
-//http://www.geeksforgeeks.org/dynamic-programming-set-7-coin-change/
-public class CoinExchangeProblem {
+//https://www.hackerrank.com/challenges/fibonacci-modified/problem
+public class ModifiedFibbonaci {
+    public static void main(String args[]) throws Exception {
+        InputReader inputReader = new InputReader(System.in);
 
-    public static void main(String[] args) {
-
-
-        InputReader inputReader
-                = new InputReader(System.in);
-        int setSize = inputReader.nextInt();
-        int sum = inputReader.nextInt();
-        int[] set = new int[setSize];
-        for (int i = 0; i < setSize; i++) {
-            set[i] = inputReader.nextInt();
-        }
-        System.out.println(solution(set, sum));
+        int t1 = inputReader.nextInt();
+        int t2 = inputReader.nextInt();
+        int n = inputReader.nextInt();
+        BigInteger[] fibonacci = new BigInteger[n];
+        fibonacci[0] = new BigInteger(String.valueOf(t1));
+        fibonacci[1] = new BigInteger(String.valueOf(t2));
+        System.out.println(function(fibonacci, n));
     }
 
-    private static int solution(int[] set, int sum) {
+    private static BigInteger function(BigInteger[] fibonacci, int i) {
 
-
-        int row = set.length + 1;
-        int col = sum + 1;
-        int[][] dp = new int[row][col];
-
-
-        for (int i = 0; i < row; i++) {
-            dp[i][0] = 1;
+        for (int j = 2; j < i; j++) {
+            fibonacci[j] = fibonacci[j - 1].multiply(fibonacci[j - 1]).add(fibonacci[j - 2]);
         }
-
-
-
-
-        for (int i = 1; i < row; i++) {
-            for (int j = 1; j < col; j++) {
-                //way when we include incoming element + when element is not included.
-                if (set[i-1] > j) {
-                    dp[i][j] = dp[i - 1][j];
-                } else {
-                    dp[i][j] = dp[i - 1][j] + dp[i][j - set[i-1]];
-                }
-
-            }
-        }
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                System.out.print(dp[i][j]+ " ");
-
-            }
-            System.out.println();
-        }
-
-        return dp[row-1][col-1];
+        return fibonacci[i - 1];
 
     }
-   static class InputReader {
+
+    static class InputReader {
 
         private InputStream stream;
         private byte[] buf = new byte[8192];
