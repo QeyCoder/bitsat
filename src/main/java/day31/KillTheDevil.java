@@ -1,57 +1,36 @@
-package day16;
+package day31;/* IMPORTANT: Multiple classes and nested static classes are supported */
+
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.math.BigInteger;
 import java.util.InputMismatchException;
 
-/**
- * Created by Gaurav on 17/11/17.
- */
-//https://www.hackerearth.com/challenge/hiring/credit-suisse-full-stack-developer-hiring-challenge/problems/13fc151f49a3407a843ab74daa447e9f/
-public class Combination {
+// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+//https://www.hackerearth.com/challenge/hiring/honeywell-net-hiring-challenge/problems/a4732aa16b9847b2ab0d42e7f15f389f/
+public class KillTheDevil {
 
-    static BigInteger two = new BigInteger("2");
+    public static void main(String args[]) throws Exception {
 
-    public static void main(String[] args) {
         InputReader inputReader = new InputReader(System.in);
-        int N = inputReader.nextInt();
-        BigInteger mod = new BigInteger("1000000007");
-
-        for (int i = 0; i < N; i++) {
-
-
-            int ppl = inputReader.nextInt();
-            BigInteger op = two.pow(ppl);
-            System.out.println(op.subtract(two).mod(mod).intValue());
+        int n = inputReader.nextInt();
+        int[] integers = new int[n];
+        int max = inputReader.nextInt();
+        integers[0] = max;
+        for (int i = 1; i < n; i++) {
+            int no = inputReader.nextInt();
+            if (no < max) {
+            } else {
+                integers[i] = no;
+                max = no;
+            }
+        }
+        for (int i = 0; i < integers.length; i++) {
+            if (integers[i] != 0) {
+                System.out.print(i + " ");
+            }
         }
 
 
-
-    }
-
-    static BigInteger powerTwo(BigInteger x, BigInteger y) {
-        if (y.equals(BigInteger.ZERO))
-            return BigInteger.ONE;
-        else if (y.mod(two) == BigInteger.ZERO)
-            return powerTwo(x, y.divide(two)).multiply(powerTwo(x, y.divide(two)));
-        else
-            return x.multiply(powerTwo(x, y.divide(two))).multiply(powerTwo(x, y.divide(two)));
-    }
-
-    BigInteger power(BigInteger x, BigInteger y) {
-        BigInteger temp;
-        if (y.equals(BigInteger.ZERO))
-            return BigInteger.ONE;
-        temp = power(x, y.divide(two));
-        if (y.mod(two).equals(BigInteger.ZERO)) {
-            return temp.multiply(temp);
-        } else {
-            if (y.compareTo(BigInteger.ZERO) == 1)
-                return x.multiply(temp).multiply(temp);
-            else
-                return temp.multiply(temp).divide(x);
-        }
     }
 
     static class InputReader {

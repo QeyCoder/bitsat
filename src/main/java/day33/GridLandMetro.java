@@ -1,58 +1,35 @@
-package day16;
+package day33;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigInteger;
 import java.util.InputMismatchException;
 
-/**
- * Created by Gaurav on 17/11/17.
- */
-//https://www.hackerearth.com/challenge/hiring/credit-suisse-full-stack-developer-hiring-challenge/problems/13fc151f49a3407a843ab74daa447e9f/
-public class Combination {
-
-    static BigInteger two = new BigInteger("2");
+public class GridLandMetro {
 
     public static void main(String[] args) {
-        InputReader inputReader = new InputReader(System.in);
-        int N = inputReader.nextInt();
-        BigInteger mod = new BigInteger("1000000007");
 
-        for (int i = 0; i < N; i++) {
+        InputReader in = new InputReader(System.in);
+        int row = in.nextInt();
+        int column = in.nextInt();
+        int noOfTrack = in.nextInt();
 
 
-            int ppl = inputReader.nextInt();
-            BigInteger op = two.pow(ppl);
-            System.out.println(op.subtract(two).mod(mod).intValue());
+        BigInteger count = BigInteger.ZERO;
+
+        for (int i = 0; i < noOfTrack; i++) {
+            int r = in.nextInt();
+            BigInteger c1 = new BigInteger(String.valueOf(in.nextInt()));
+            BigInteger c2 = new BigInteger(String.valueOf(in.nextInt()));
+            count =  c2.subtract(c1).add(BigInteger.ONE);
+
         }
+        BigInteger totalCell = new BigInteger(String.valueOf(row)).multiply(new BigInteger(String.valueOf(column)));
 
-
-
+        System.out.println(totalCell.subtract(count));
+        //System.out.println(count);
     }
 
-    static BigInteger powerTwo(BigInteger x, BigInteger y) {
-        if (y.equals(BigInteger.ZERO))
-            return BigInteger.ONE;
-        else if (y.mod(two) == BigInteger.ZERO)
-            return powerTwo(x, y.divide(two)).multiply(powerTwo(x, y.divide(two)));
-        else
-            return x.multiply(powerTwo(x, y.divide(two))).multiply(powerTwo(x, y.divide(two)));
-    }
-
-    BigInteger power(BigInteger x, BigInteger y) {
-        BigInteger temp;
-        if (y.equals(BigInteger.ZERO))
-            return BigInteger.ONE;
-        temp = power(x, y.divide(two));
-        if (y.mod(two).equals(BigInteger.ZERO)) {
-            return temp.multiply(temp);
-        } else {
-            if (y.compareTo(BigInteger.ZERO) == 1)
-                return x.multiply(temp).multiply(temp);
-            else
-                return temp.multiply(temp).divide(x);
-        }
-    }
 
     static class InputReader {
 
