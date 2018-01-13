@@ -36,10 +36,14 @@ public class Power2 {
         return 1;
     }
 
+    public boolean power(int x) {
+        return (x & x - 1) == 0 ? true : false;
+    }
     public static void main(String[] args) {
         Power2 power2
                 = new Power2();
-        //System.out.println(power2.power("64"));
+        System.out.println(power2.power(64));
+        System.out.println(power2.power(63));
 
     }
 
