@@ -1,69 +1,87 @@
 package day36;
 
-import java.util.LinkedList;
-import java.util.ListIterator;
+import java.util.*;
 
 /**
  * Created by Gaurav on 25/12/17.
  */
+//https://www.hackerrank.com/challenges/bfsshortreach/problem
 public class BFS {
 
-//DFS use stack instead of queue
-    static class Graph {
-        private int noOfEdges;
+    static int cost = 6;
 
-        LinkedList<Integer>[] adjList;
-
-        public Graph(int noOfEdges) {
-            this.noOfEdges = noOfEdges;
-            adjList =  new LinkedList[noOfEdges];
-            for (int i = 0; i < noOfEdges; i++) {
-                adjList[i] = new LinkedList<>();
+    public static String BFS(int src, int[][] adjList) {
+        StringBuilder costs = new StringBuilder();
+        Map<Integer, Integer> finalCost = new TreeMap<>();
+        int visited[] = new int[adjList.length];
+        for (int i = 0; i < visited.length; i++) {
+            if (visited[i] == 0) {
+                finalCost.putAll(solution(src, adjList, visited));
             }
         }
+        for (int i = 0; i < visited.length; i++) {
+            if (visited[i] == 0) {
+                finalCost.put(i, -1);
+            }
+        }
+        for (Integer b : finalCost.values()) {
+            costs.append(b + " ");
+        }
+        return costs.toString().trim();
 
-        public void addEdge(int src, int weight) {
-            adjList[src].add(weight);
         }
 
-        public void BFS(int src) {
-            boolean visited[] = new boolean[noOfEdges];
-            LinkedList<Integer> queue = new LinkedList<>();
-            visited[src] = true;
-            queue.add(src);
+    private static HashMap<Integer, Integer> solution(int src, int[][] adjList, int[] visited) {
+        HashMap<Integer, Integer> finalCost = new LinkedHashMap<>();
+        visited[src] = -1;
+        Queue<Integer> integerQueue = new LinkedList<>();
 
-            while (queue.size() != 0) {
-                src = queue.poll();
-                System.out.println("node " + src);
-                ListIterator<Integer> iterator = adjList[src].listIterator();
-                while (iterator.hasNext()) {
-                    int data = iterator.next();
-                    if (!visited[data]) {
-                        visited[data] = true;
-                        queue.add(data);
+        integerQueue.add(src);
+
+        while (!integerQueue.isEmpty()) {
+            Integer node = integerQueue.poll();
+            for (int j = 0; j < adjList.length; j++) {
+                if (adjList[node][j] == 1 && j != node) {
+                    if(visited[j] == 0){
+                        integerQueue.add(j);
+                        int delta = 0;
+                        if(visited[node] > 0)
+                            delta = visited[node];
+                        finalCost.put(j,  delta + cost);
+                        visited[j] = delta + cost;
                     }
                 }
-
-
             }
 
 
         }
+
+        return finalCost;
     }
 
+
     public static void main(String[] args) {
-        Graph g = new Graph(4);
 
-        g.addEdge(0, 1);
-        g.addEdge(0, 2);
-        g.addEdge(1, 2);
-        g.addEdge(2, 0);
-        g.addEdge(2, 3);
-        g.addEdge(3, 3);
+        Scanner in = new Scanner(System.in);
+        int q = Integer.parseInt(in.nextLine());
+        for (int a0 = 0; a0 < q; a0++) {
+            String[] data = in.nextLine().split(" ");
+            int n = Integer.parseInt(data[0]);
+            int m = Integer.parseInt(data[1]);
+            int[][] adjList = new int[n][n];
 
-        System.out.println("BFS (starting from vertex 2)");
+            for (int i = 0; i < m; i++) {
+                data = in.nextLine().split(" ");
+                int u = Integer.parseInt(data[0]) - 1;
+                int v = Integer.parseInt(data[1]) - 1;
+                adjList[u][v] = 1;
+                adjList[v][u] = 1;
+            }
+            int S = Integer.parseInt(in.nextLine());
+            System.out.println(BFS(S - 1, adjList));
+        }
+        in.close();
 
-        g.BFS(2);
 
     }
 }
