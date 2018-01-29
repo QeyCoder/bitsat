@@ -6,35 +6,24 @@ import java.util.Scanner;
  * Created by Gaurav on 22/01/18.
  */
 public class InsertionSort {
+    private static void solution(int[] arr, int index) {
 
-    public static void main(String[] args) {
+        for (int i = 1; i <index; i++) {
+            int j = i;
 
-        Scanner scanner
-                = new Scanner(System.in);
-        int size = Integer.parseInt(scanner.nextLine());
-        String[] ip = scanner.nextLine().split(" ");
-        int[] data = new int[size];
-        for (int i = 0; i < size; i++) {
-            data[i] = Integer.parseInt(ip[i]);
-        }
-
-
-        solution(data, 0);
-        for (int i : data) {
-            System.out.print(i + " ");
-        }
-    }
-
-    private static void solution(int[] data, int index) {
-        if (index == data.length ) {
-            return;
-        }
-        for (int i = 0; i <= index; i++) {
-            if (data[i] > data[index]) {
-                swap(data, i, index);
+            while(j>0){
+                if( arr[j]<arr[j-1]){
+                    swap(arr,j,j-1);}
+                j--;
             }
+            for (int s : arr) {
+                System.out.print(s + " ");
+
+            }
+            System.out.print("\n");
+
         }
-        solution(data, index + 1);
+
 
     }
 
@@ -43,5 +32,16 @@ public class InsertionSort {
         int temp = data[i];
         data[i] = data[j];
         data[j] = temp;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] arr = new int[n];
+        for(int arr_i = 0; arr_i < n; arr_i++){
+            arr[arr_i] = in.nextInt();
+        }
+        solution(arr,n);
+        in.close();
     }
 }
