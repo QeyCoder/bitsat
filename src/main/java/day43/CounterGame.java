@@ -22,12 +22,13 @@ public class CounterGame {
 
 
     static long nextPowerOf2(long no) {
+        long s  =1l;
         long n = 0;
         while (no != 1) {
             no >>= 1;
             n++;
         }
-        return 1 << n;
+        return s<< n;
     }
 
     static boolean isPowerOfTwo(long x) {
