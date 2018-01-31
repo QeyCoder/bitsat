@@ -20,7 +20,8 @@ public class PerfectNumber {
         int i = 1;
         int bigInteger = 19;
         while (i != n) {
-            bigInteger++;
+            //every ninth number
+            bigInteger= bigInteger+9;
             if (isSumTen(String.valueOf(bigInteger))) {
                 i++;
             }
