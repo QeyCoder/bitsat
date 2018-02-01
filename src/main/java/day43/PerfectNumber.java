@@ -1,6 +1,6 @@
 package day43;
 
-import template.InputReader;
+import template.FastInputReader;
 
 /**
  * Created by Gaurav on 31/01/18.
@@ -10,9 +10,9 @@ public class PerfectNumber {
     public static void main(String[] args) {
 
 
-        InputReader inputReader
-                = new InputReader(System.in);
-        int n = inputReader.readInt();
+        FastInputReader fastInputReader
+                = new FastInputReader(System.in);
+        int n = fastInputReader.readInt();
         System.out.println(solution(n));
     }
 

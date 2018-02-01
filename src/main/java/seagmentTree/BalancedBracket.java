@@ -1,6 +1,6 @@
 package seagmentTree;
 
-import template.InputReader;
+import template.FastInputReader;
 
 import java.util.Stack;
 
@@ -10,17 +10,17 @@ import java.util.Stack;
 public class BalancedBracket {
 
     public static void main(String[] args) {
-        InputReader inputReader
-                = new InputReader(System.in);
+        FastInputReader fastInputReader
+                = new FastInputReader(System.in);
 
-        int n = inputReader.readInt();
+        int n = fastInputReader.readInt();
         for (int j = 0; j < n; j++) {
 
 
             Stack<Character> stack = new Stack<>();
 
             boolean sta = false;
-            String data = inputReader.readString();
+            String data = fastInputReader.readString();
             for (int i = 0; i < data.length(); i++) {
                 char temp = data.charAt(i);
                 if (temp == '}' || temp == ']' || temp == ')') {

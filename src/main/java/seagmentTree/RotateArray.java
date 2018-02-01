@@ -1,6 +1,6 @@
 package seagmentTree;
 
-import template.InputReader;
+import template.FastInputReader;
 
 /**
  * Created by Gaurav on 31/01/18.
@@ -8,13 +8,13 @@ import template.InputReader;
 public class RotateArray {
 
     public static void main(String[] args) {
-        InputReader inputReader = new InputReader(System.in);
+        FastInputReader fastInputReader = new FastInputReader(System.in);
 
-        int size = inputReader.readInt();
-        int rotation = inputReader.readInt();
+        int size = fastInputReader.readInt();
+        int rotation = fastInputReader.readInt();
         int[] array = new int[size];
         for (int i = 0; i < size; i++) {
-            array[i] = inputReader.readInt();
+            array[i] = fastInputReader.readInt();
         }
         for (int i = 0; i < rotation; i++) {
 

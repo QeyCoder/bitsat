@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.InputMismatchException;
 
-public class InputReader {
+public class FastInputReader {
 
     private InputStream stream;
     private byte[] buf = new byte[1024];
@@ -12,7 +12,7 @@ public class InputReader {
     private int numChars;
     private SpaceCharFilter filter;
 
-    public InputReader(InputStream stream) {
+    public FastInputReader(InputStream stream) {
         this.stream = stream;
     }
 

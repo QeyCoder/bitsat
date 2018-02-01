@@ -1,6 +1,6 @@
 package day43;
 
-import template.InputReader;
+import template.FastInputReader;
 
 import java.text.DecimalFormat;
 
@@ -10,14 +10,14 @@ import java.text.DecimalFormat;
 public class SuperMarket {
     private static DecimalFormat df2 = new DecimalFormat(".########");
     public static void main(String[] args) {
-        InputReader inputReader
-                = new InputReader(System.in);
-        int n = inputReader.readInt();
-        int m = inputReader.readInt();
+        FastInputReader fastInputReader
+                = new FastInputReader(System.in);
+        int n = fastInputReader.readInt();
+        int m = fastInputReader.readInt();
         double min = Double.MAX_VALUE;
         for (int i = 0; i < n; i++) {
-            double a = inputReader.readInt();
-            double b = inputReader.readInt();
+            double a = fastInputReader.readInt();
+            double b = fastInputReader.readInt();
 
             double cost = a / b;
 
