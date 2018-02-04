@@ -22,7 +22,7 @@ public class MatrixPath {
 
     }
 
-    //Solution with recursion
+    //CloudDay with recursion
     private static int findPathDevide(int row, int column) {
         if (row == 1 || column == 1) {
             return 1;
@@ -33,7 +33,7 @@ public class MatrixPath {
     }
 
 
-    //Solution with Dp
+    //CloudDay with Dp
     private static int finaAllPath(int row, int column) {
         if (row == 1 || column == 1) {
             return 1;

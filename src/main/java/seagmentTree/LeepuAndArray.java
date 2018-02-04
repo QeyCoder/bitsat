@@ -55,7 +55,7 @@ public class LeepuAndArray {
 
 
 
-//Naive Solution
+//Naive CloudDay
     public static void main1(String[] args) {
 
 

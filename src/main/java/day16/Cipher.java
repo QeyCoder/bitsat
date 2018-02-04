@@ -11,7 +11,7 @@ public class Cipher {
 
     //https://www.hackerrank.com/challenges/caesar-cipher-1/problem
     public static void main(String[] args) {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named CloudDay. */
         Scanner in = new Scanner(System.in);
         int N = Integer.parseInt(in.nextLine());
         String data = in.nextLine();
