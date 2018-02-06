@@ -12,13 +12,26 @@ public class Problem6 {
 
         FastInputReader fastInputReader = new FastInputReader(System.in);
         int cases = fastInputReader.readInt();
+        StringBuilder stringBuilder
+                = new StringBuilder();
         for (int i = 0; i < cases; i++) {
             int N = fastInputReader.readInt();
 
-            for (int j = 0; j < N; j++) {
-
-            }
+            long output = sumOfNumberSquare(N) - sumOfSquareNumber(N);
+            stringBuilder = stringBuilder.append(output).append("\n");
         }
+        System.out.println(stringBuilder.toString());
+    }
+
+    private static long sumOfNumberSquare(long n) {
+
+        long sum = n * (n + 1) / 2;
+        return sum * sum;
+
+    }
+
+    private static long sumOfSquareNumber(long n) {
+        return n * (n + 1) * (2 * n + 1) / 6;
     }
 }
 
