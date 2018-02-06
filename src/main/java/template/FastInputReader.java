@@ -16,6 +16,10 @@ public class FastInputReader {
         this.stream = stream;
     }
 
+    public FastInputReader() {
+        this(System.in);
+    }
+
     public int read() {
         if (numChars == -1)
             throw new InputMismatchException();
