@@ -86,7 +86,17 @@ public class FastInputReader {
         return (char) c;
     }
 
+    public int[] readIntArray(int size) {
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = readInt();
+        }
+        return array;
+
+    }
     public interface SpaceCharFilter {
         public boolean isSpaceChar(int ch);
     }
+
+
 }
