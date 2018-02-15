@@ -17,7 +17,7 @@ class COINS{
 				return (long)h.get(n);
 			}
 			else{
-				long result = Math.max(n,maxCoins(n/2)+maxCoins(n/3)+maxCoins(n/4));
+				long result = Math.max(n, maxCoins(n / 2) + maxCoins(n / 3) + maxCoins(n / 4));
 				h.put((long)n,(long)result);
 				return result;
 			}
