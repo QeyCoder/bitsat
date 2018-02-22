@@ -94,6 +94,21 @@ public class FastInputReader {
         return array;
 
     }
+    public  char[] readCharArray( int size) {
+        char[] array = new char[size];
+        for (int i = 0; i < size; i++)
+            array[i] = readCharacter();
+        return array;
+    }
+
+    public  int[][] readTable(FastInputReader in, int rowCount,
+                                     int columnCount) {
+        int[][] table = new int[rowCount][];
+        for (int i = 0; i < rowCount; i++)
+            table[i] = readIntArray(columnCount);
+        return table;
+    }
+
     public interface SpaceCharFilter {
         public boolean isSpaceChar(int ch);
     }

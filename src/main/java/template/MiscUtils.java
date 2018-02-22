@@ -1,6 +1,6 @@
 package template;
 
-class MiscUtils {
+public class MiscUtils {
     public static final int[] DX4 = {1, 0, -1, 0};
     public static final int[] DY4 = {0, -1, 0, 1};
 
@@ -10,4 +10,19 @@ class MiscUtils {
                 && column < columnCount;
     }
 
+    public static int min(int a, int b) {
+        return a < b ? a : b;
+    }
+
+    public static int max(int a, int b) {
+        return a > b ? a : b;
+    }
+
+    public static long min(long a, long b) {
+        return a < b ? a : b;
+    }
+
+    public static long max(long a, long b) {
+        return a > b ? a : b;
+    }
 }
