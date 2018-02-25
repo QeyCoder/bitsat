@@ -103,7 +103,7 @@ public class FastInputReader {
 
     public  int[][] readTable(int rowCount,
                                      int columnCount) {
-        int[][] table = new int[rowCount][];
+        int[][] table = new int[rowCount][columnCount];
         for (int i = 0; i < rowCount; i++)
             table[i] = readIntArray(columnCount);
         return table;
