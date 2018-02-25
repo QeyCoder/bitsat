@@ -101,7 +101,7 @@ public class FastInputReader {
         return array;
     }
 
-    public  int[][] readTable(FastInputReader in, int rowCount,
+    public  int[][] readTable(int rowCount,
                                      int columnCount) {
         int[][] table = new int[rowCount][];
         for (int i = 0; i < rowCount; i++)

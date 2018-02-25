@@ -31,6 +31,7 @@ public class KadaneAlgo {
         int current = data[0];
 
         for (int i = 1; i < data.length; i++) {
+
             current = MiscUtils.max(data[i], data[i] + current);
             maxSoFar = MiscUtils.max(current, maxSoFar);
         }
