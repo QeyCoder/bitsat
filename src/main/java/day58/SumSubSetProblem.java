@@ -46,7 +46,6 @@ public class SumSubSetProblem {
 
     private static boolean solution1(int[] data, boolean[][] dp, int sum, int index) {
 
-        System.out.print("Index = " + index  + " sum = " + sum + "\n");
 
         if (sum == 0) {
             return true;
