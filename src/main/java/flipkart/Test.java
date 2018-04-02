@@ -46,4 +46,7 @@ public class Test {
     }
 
 
+    public static  boolean foo() {
+
+    return true;}
 }

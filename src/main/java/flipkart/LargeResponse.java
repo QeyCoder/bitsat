@@ -9,13 +9,15 @@ import java.util.Scanner;
  */
 
 
-public class LargeResponse {
+public class LargeResponse   {
+
 
 
     private static final Scanner scan = new Scanner(System.in);
-
     public static void main(String args[]) throws Exception {
 
+        Test obj = null;
+        System.out.println(obj.foo());
         String filename = scan.nextLine();
         String outputFileName = "bytes_" + filename;
 
