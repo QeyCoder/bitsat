@@ -12,7 +12,6 @@ public class Bazooka {
 
     public static void main(String[] args) {
 
-
         FastInputReader fastInputReader = new FastInputReader();
         int T = fastInputReader.readInt();
         StringBuilder stringBuilder = new StringBuilder();

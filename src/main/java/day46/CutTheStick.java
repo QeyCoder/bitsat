@@ -21,8 +21,6 @@ public class CutTheStick {
                 if (arr[i] != 0) {
                     index++;
                 } else {
-
-
                     int newVal = arr[i] - min;
                     if (newVal < newMin) {
                         newMin = newVal;
