@@ -17,7 +17,6 @@ public class CsvFormatter {
 
     public static void main(String[] args) throws IOException {
 
-
         int argLength = args.length;
 
         if (argLength == 0) {
