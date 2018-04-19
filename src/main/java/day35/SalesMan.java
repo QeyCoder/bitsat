@@ -9,8 +9,7 @@ import java.util.Scanner;
 //https://www.hackerrank.com/contests/world-codesprint-12/challenges/the-salesman
 public class SalesMan {
 
-
-        static int minimumTime(int[] x) {
+         public int minimumTime (int[] x) throws Exception{
             int max =  Integer.MIN_VALUE;
             int min =  Integer.MAX_VALUE;
 

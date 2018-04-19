@@ -13,6 +13,7 @@ import java.util.InputMismatchException;
 class IntegerBrowser {
     static class FastInputReader {
 
+
         private InputStream stream;
         private byte[] buf = new byte[1024];
         private int curChar;
