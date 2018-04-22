@@ -37,8 +37,8 @@ public class SalesMan {
                 for(int x_i = 0; x_i < n; x_i++){
                     x[x_i] = in.nextInt();
                 }
-                int result = minimumTime(x);
-                System.out.println(result);
+               // int result = minimumTime(x);
+               // System.out.println(result);
             }
             in.close();
         }

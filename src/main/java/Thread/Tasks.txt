@@ -1,0 +1,7 @@
+1) producer and consumer using
+   a) BlockinngQueue(Interruptible)
+   b) Piped I/O (Non-Interruptible)
+ 
+2) Toaster simulation
+3) Dining Philospher problem and prevention of Deadlock.
+4) Deadlock detector and resolver

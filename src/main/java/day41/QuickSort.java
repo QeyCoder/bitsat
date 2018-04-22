@@ -29,23 +29,36 @@ public class QuickSort {
 
 
         //taking start as pivot
-        int pivot = 0;
-        quickSort(data, 0, pivot, data.length - 1);
+        quickSort(data, 0, data.length - 1);
 
 
     }
 
-    private static void quickSort(int[] data, int start, int pivot, int end) {
+    private static void quickSort(int[] data, int start, int end) {
         if (start < end) {
-
-            pivot = partition(data,start,end);
-            quickSort(data, start, pivot - 1, end);
-            quickSort(data, start, pivot + 1, end);
+            int pivot = partition(data, start, end);
+            quickSort(data, start, pivot - 1);
+            quickSort(data, pivot + 1, end);
         }
     }
 
-    private static int partition(int[] data, int start, int end) {
-        return 0;
+    private static int partition(int[] data, int low, int high) {
+        int pivot = data[high];
+        int i = (low - 1);
+        for (int j = low; j < high; j++) {
+            if (data[j] <= pivot) {
+                i++;
+                swap(data, i, j);
+            }
+        }
+        swap(data, i + 1, high);
+        return i + 1;
+    }
+
+    private static void swap(int[] aArr, int start, int end) {
+        int temp = aArr[start];
+        aArr[start] = aArr[end];
+        aArr[end] = temp;
     }
 
 }
