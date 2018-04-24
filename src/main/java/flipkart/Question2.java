@@ -38,7 +38,7 @@ public class Question2 {
                     if (j == 0) {
                         or = arr[j];
                     } else {
-                        or |= arr[j];
+                        or &= arr[j];
                         or %= (1e9 + 7);
                     }
                 }
