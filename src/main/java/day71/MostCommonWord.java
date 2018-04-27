@@ -14,8 +14,22 @@ public class MostCommonWord {
         MostCommonWord mostCommonWord = new MostCommonWord();
         System.out.println(mostCommonWord.mostCommonWord("Bob hit a ball, the hit BALL flew far after it was hit.",
                 new String[]{"hit"}));
+
+        System.out.println(mostCommonWord.reverseWords("   a   b "));
     }
 
+    public String reverseWords(String s) {
+
+        String[] ip = s.split(" ");
+        StringBuilder strBldr = new StringBuilder();
+        for (int i = ip.length - 1; i >= 0; i--) {
+            ip[i] = ip[i].trim();
+            if(!ip[i].equals(""))
+            strBldr.append(ip[i]).append(" ");
+        }
+        return strBldr.toString().trim();
+
+    }
     public String mostCommonWord(String paragraph, String[] banned) {
         Map<String, Integer> hashMap = new TreeMap<>();
         Set<String> bannedSet = new HashSet<>();
