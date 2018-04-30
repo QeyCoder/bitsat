@@ -1,7 +1,5 @@
 package leetCode;
 
-import template.FastInputReader;
-
 /**
  * Created by Gaurav on 30/04/18.
  */
@@ -10,7 +8,6 @@ import template.FastInputReader;
 public class _44 {
 
 
-    public static void main(String[] args) {
         class Solution {
             public boolean isMatch(String s, String p) {
                 return solution(s, p, s.length(), p.length());
