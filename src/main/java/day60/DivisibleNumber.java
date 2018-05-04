@@ -6,7 +6,7 @@ import template.FastInputReader;
  * Created by Gaurav on 05/03/18.
  */
 
-@Unsolved
+
 public class DivisibleNumber {
 
 
