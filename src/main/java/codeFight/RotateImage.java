@@ -1,4 +1,4 @@
-package day14;
+package codeFight;
 
 /**
  * Created by Gaurav on 17/10/17.

@@ -1,0 +1,18 @@
+id	email_title	short_size
+5	Your requested backup	223 Mb
+1	You won 1M dollars!	20 Mb
+17	Information about your new passport	2 Mb
+16	Do it! Just do it!	1 Mb
+13	We will we will rock you!	1 Mb
+15	Re: Re: Re: spam	1024 Kb
+9	We are missing you :(	1023 Kb
+2	You are fired	305 Kb
+11	Your need to confirm your profile	239 Kb
+14	Re: question about thesis	239 Kb
+8	Good morning!	238 Kb
+4	Spam email	22 Kb
+12	Go go power rangers	1 Kb
+10	Your debt is growing!	1 Kb
+7	Spam 2	1 Kb
+6	Your LinkedIn profile	0 Kb
+3	Black Friday is coming	0 Kb
