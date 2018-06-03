@@ -15,6 +15,7 @@ public class HandShake {
      * Complete the handshake function below.
      */
     static int handshake(int n) {
+
         return n*(n-1)/2;
 
     }
