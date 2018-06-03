@@ -1,7 +1,7 @@
 package mathemetics;
 
 /**
- * @author mmt7309(Gaurav Dudeja) on 3/6/18
+ * @author (Qey_coder) on 3/6/18
  **/
 public class MaximumDraw {
 }
