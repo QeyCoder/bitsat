@@ -1,4 +1,4 @@
-package roundzero.Thread.Basics;
+package Thread.Basics;
 
 public class ThreadReference {
 
@@ -27,9 +27,9 @@ class RunnableTask implements Runnable{
 		//System.out.println("Running thread reference = " + this);
 		try{
 			System.out.print(':');
-			roundzero.Thread.sleep(500L);
+			Thread.sleep(500L);
 			System.out.print('-');
-			roundzero.Thread.sleep(500L);
+			Thread.sleep(500L);
 			System.out.println(')');
 		}catch(InterruptedException e){
 			e.printStackTrace();

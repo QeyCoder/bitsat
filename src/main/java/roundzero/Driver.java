@@ -1,5 +1,7 @@
 package roundzero;
 
+import roundzero.pubsub.Consumer;
+
 /**
  * Created by Gaurav on 16/04/18.
  */

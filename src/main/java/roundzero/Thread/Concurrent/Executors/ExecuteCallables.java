@@ -1,4 +1,4 @@
-package roundzero.Thread.Concurrent.Executors;
+package Thread.Concurrent.Executors;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ public class ExecuteCallables{
 				while(size > 5){
 					try{
 						//System.out.println("Going to sleep as workQueue size = " + size);
-						roundzero.Thread.sleep(2000L);
+						Thread.sleep(2000L);
 						size = workQueue.size();
 					}catch(InterruptedException e){
 						e.printStackTrace();
@@ -58,7 +58,7 @@ public class ExecuteCallables{
 		final int n = 10;
 		List<FutureTask<String>> futureTasks = new ArrayList<>();
 		for(int i = 0; i < n;i++){
-			Callable<String> task = new CallableImpl("roundzero.Thread-" + (char)(65 + i));
+			Callable<String> task = new CallableImpl("Thread-" + (char)(65 + i));
 			FutureTask<String> futureTask = new FutureTask<>(task);
 			futureTasks.add(futureTask);
 		}
@@ -83,8 +83,8 @@ class CallableImpl implements Callable<String> {
 	@Override
 	public String call() throws Exception{
 	
-		roundzero.Thread.sleep(5000L);
-		System.out.println(name + " task successfully executed by " + roundzero.Thread.currentThread().getName());
+		Thread.sleep(5000L);
+		System.out.println(name + " task successfully executed by " + Thread.currentThread().getName());
 		return "Task completed.";
 	}
 	
@@ -106,9 +106,9 @@ class ThreadFactoryImpl implements ThreadFactory{
 
 	@Override
 	public synchronized Thread newThread(Runnable command){
-				Thread t = new Thread(command,"roundzero.Thread-" + ++counter);
+				Thread t = new Thread(command,"Thread-" + ++counter);
 				//t.setDaemon(true);
-				System.out.println("Created Worker roundzero.Thread = " + counter);
+				System.out.println("Created Worker Thread = " + counter);
 				return t;
 	
 	}

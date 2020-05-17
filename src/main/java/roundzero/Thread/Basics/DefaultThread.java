@@ -4,7 +4,7 @@ public class DefaultThread{
 
 	public static void main(String args[]){
 	
-		Thread t = roundzero.Thread.currentThread();
+		Thread t = Thread.currentThread();
 		/*
 		* roundzero.Thread state to daemon or non-daemon
 		* can only be changed before starting the

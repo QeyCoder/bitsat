@@ -64,7 +64,7 @@ public class EvenOdd {
                         MyThread.class.wait();
                     }
 
-                    System.out.println(i + " " + roundzero.Thread.currentThread());
+                    System.out.println(i + " " + Thread.currentThread());
                     isEven = true;
                     MyThread.class.notify();
                 }
@@ -77,7 +77,7 @@ public class EvenOdd {
                     while (!isEven) {
                         MyThread.class.wait();
                     }
-                    System.out.println(i + " " + roundzero.Thread.currentThread());
+                    System.out.println(i + " " + Thread.currentThread());
                     isEven = false;
                     MyThread.class.notify();
                 }

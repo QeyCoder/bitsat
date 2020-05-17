@@ -1,4 +1,4 @@
-package roundzero.Thread.Basics;/*
+package Thread.Basics;/*
 * As soon as last user thread dies
 * jvm will exit by terminating abruptly
 * all daemon threads.And this causes 
@@ -14,7 +14,7 @@ public class FinallyAndDaemon{
 			t.setDaemon(true);
 			t.start();
 			try{
-				roundzero.Thread.sleep(50L);
+				Thread.sleep(50L);
 			}catch(InterruptedException e){
 				e.printStackTrace();
 			}

@@ -20,7 +20,7 @@ public class DualLockWait{
 			Thread t = new Thread(target);
 			t.start();
 			try{
-				roundzero.Thread.sleep(1000L);
+				Thread.sleep(1000L);
 			}catch(InterruptedException e){
 				e.printStackTrace();
 			}

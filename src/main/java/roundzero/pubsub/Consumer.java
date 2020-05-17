@@ -1,5 +1,7 @@
 package roundzero.pubsub;
 
+import roundzero.Manager;
+
 /**
  * Created by Gaurav on 16/04/18.
  */

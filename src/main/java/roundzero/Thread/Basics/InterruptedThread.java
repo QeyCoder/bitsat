@@ -1,4 +1,4 @@
-package roundzero.Thread.Basics;
+package Thread.Basics;
 
 public class InterruptedThread{
 
@@ -11,7 +11,7 @@ public class InterruptedThread{
 		t.start();
 	
 		try{
-			roundzero.Thread.sleep(5000L);
+			Thread.sleep(5000L);
 		}catch(InterruptedException e){
 			e.printStackTrace();
 		}
@@ -30,12 +30,12 @@ class InterruptedChildThread implements Runnable{
 
 	@Override
 	public void run(){
-			System.out.println("Child roundzero.Thread started.");
+			System.out.println("Child Thread started.");
 			int i = 0;
-			Thread t = roundzero.Thread.currentThread();
+			Thread t = Thread.currentThread();
 			while(!t.isInterrupted());
 			
-			System.out.println("Child roundzero.Thread stopped.");
+			System.out.println("Child Thread stopped.");
 	
 	}
 
@@ -45,14 +45,14 @@ class SleepingThread implements Runnable{
 
 	@Override
 	public void run(){
-		System.out.println("Sleeping roundzero.Thread started.");
+		System.out.println("Sleeping Thread started.");
 		try{
-			roundzero.Thread.sleep(100 * 1000L);
+			Thread.sleep(100 * 1000L);
 		}catch(InterruptedException e){
 			e.printStackTrace();
 		}
 		
-		System.out.println("Sleeping roundzero.Thread stopped.");
+		System.out.println("Sleeping Thread stopped.");
 	
 	}
 

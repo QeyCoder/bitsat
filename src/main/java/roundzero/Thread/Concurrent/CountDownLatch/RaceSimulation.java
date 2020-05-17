@@ -1,4 +1,4 @@
-package roundzero.Thread.Concurrent.CountDownLatch;
+package Thread.Concurrent.CountDownLatch;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -18,7 +18,7 @@ public class RaceSimulation{
 				racer.start();
 		}
 		try{
-			roundzero.Thread.sleep(1000L);
+			Thread.sleep(1000L);
 		}catch(InterruptedException e){
 			e.printStackTrace();
 		}

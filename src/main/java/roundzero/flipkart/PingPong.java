@@ -1,4 +1,4 @@
-package roundzero.flipkart;
+package flipkart;
 
 /**
  * Created by Gaurav on 22/03/18.
@@ -22,7 +22,7 @@ public class PingPong {
         System.out.println("Game started!");
         thread2.start();
         thread1.start();
-        roundzero.Thread.sleep(20);
+        Thread.sleep(20);
 
         //Tell the players to stop
         thread1.interrupt();
@@ -53,7 +53,7 @@ public class PingPong {
         @Override
         public void run() {
 
-            while (!roundzero.Thread.interrupted()) {
+            while (!Thread.interrupted()) {
                 while (!shouldPlay);
 
                 System.out.println(text);

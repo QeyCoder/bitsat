@@ -1,4 +1,4 @@
-package roundzero.Thread.Basics;/*
+package Thread.Basics;/*
  * Daemon thread is independent of its
  * parent and last long until all
  * user thread dies.
@@ -22,7 +22,7 @@ public class DaemonLife{
 		
 		try{
 		
-			roundzero.Thread.sleep(2000L);
+			Thread.sleep(2000L);
 		}catch(InterruptedException e){
 			e.printStackTrace();
 		}
@@ -38,7 +38,7 @@ class UserThread implements Runnable{
 	public void run(){
 		System.out.println("User thread started.");
 		try{
-			roundzero.Thread.sleep(10 * 1000L);
+			Thread.sleep(10 * 1000L);
 		}catch(InterruptedException e){
 			e.printStackTrace();
 		}
@@ -56,9 +56,9 @@ class ServiceThread implements Runnable{
 		System.out.println("Daemon thread started.");
 		try{
 			while(true){
-				System.out.println("Daemon roundzero.Thread is alive.");
+				System.out.println("Daemon Thread is alive.");
 				try{
-					roundzero.Thread.sleep(1000L);
+					Thread.sleep(1000L);
 				}catch(InterruptedException e){
 					e.printStackTrace();
 				}

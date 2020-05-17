@@ -1,4 +1,4 @@
-package roundzero.Thread.Concurrent.Executors;/*
+package Thread.Concurrent.Executors;/*
 *  By default all worker threads are non-daemon
 *  therefore even if all tasks get completed
 *  then these threads will prohibit jvm from exiting.
@@ -31,7 +31,7 @@ public class CancelCallableTask{
 		
 		
 		try{
-			roundzero.Thread.sleep(100L);
+			Thread.sleep(100L);
 		}catch(InterruptedException e){
 			e.printStackTrace();	
 		}
@@ -83,7 +83,7 @@ public class CancelCallableTask{
 		
 		
 		
-		System.out.println("Main roundzero.Thread exits.");
+		System.out.println("Main Thread exits.");
 	
 	}
 
@@ -95,17 +95,17 @@ class CancellableTask implements Callable<String>
 	public String call() throws Exception{
 		
 		for(int i = 1; i < 100; i++){
-			//roundzero.Thread.sleep(1000L);
+			//Thread.sleep(1000L);
 			
 			/*
 			* Therefore to provide cancellation
 			* functionality via Future Object,we 
-			* need to use logic of roundzero.Thread#interrupted()
+			* need to use logic of Thread#interrupted()
 			* inside the call() method.
 			*
 			*/
 			
-			System.out.println("Counter incremented to = " + i + ", isInterrupted = " + roundzero.Thread.currentThread().isInterrupted());
+			System.out.println("Counter incremented to = " + i + ", isInterrupted = " + Thread.currentThread().isInterrupted());
 		}
 		System.out.println("Completed task.");
 		return "Task Completed.";
