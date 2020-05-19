@@ -15,10 +15,7 @@ public class Solution1381 {
             if(currentIndex==size){
                 return;
             }
-
-
             stack[currentIndex++]=x;
-//            System.out.println(currentIndex+"-"+stack[currentIndex-1]);
         }
 
         public int pop() {
@@ -38,7 +35,6 @@ public class Solution1381 {
             for(int i=0;i<k;i++){
                 stack[i]+=val;
             }
-            return;
         }
     }
 
