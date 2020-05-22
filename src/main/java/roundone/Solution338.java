@@ -5,9 +5,7 @@ public class Solution338 {
     class Solution {
         public int[] countBits(int num) {
             int ans[] =  new int[num+1];
-
             ans[0]= 0;
-
             //TODO Intiutation
             //[Even no end with 0 so we don't need to count no of bit] so previous num;
             //Odd number to even = 1+ current;
