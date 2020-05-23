@@ -1,7 +1,7 @@
 package roundone;
 
 public class Solution206 {
-    public class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
 
@@ -18,13 +18,21 @@ public class Solution206 {
         }
     }
 
-    class Solution {
+    static class Solution {
         public ListNode reverseList(ListNode head) {
 
             // return iterative(head);
-            return recursive(head);
+//            return recursive(head);
 
+            return reverseListInt(head, null);
+        }
 
+        private ListNode reverseListInt(ListNode head, ListNode newHead) {
+            if (head == null)
+                return newHead;
+            ListNode next = head.next;
+            head.next = newHead;
+            return reverseListInt(next, head);
         }
 
 
@@ -54,5 +62,13 @@ public class Solution206 {
             return current;
 
         }
+
+    }
+
+    public static void main(String[] args) {
+        ListNode root = new ListNode(1);
+        root.next = new ListNode(2);
+        root.next.next = new ListNode(3);
+        new Solution().reverseList(root);
     }
 }
