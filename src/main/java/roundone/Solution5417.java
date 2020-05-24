@@ -1,7 +1,7 @@
 package roundone;
 
 public class Solution5417 {
-    class Solution {
+    static class Solution {
         public int maxVowels(String s, int k) {
             if(s.length()==0){
                 return 0;
