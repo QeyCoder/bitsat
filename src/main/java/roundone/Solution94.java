@@ -25,6 +25,21 @@ public class Solution94 {
         }
     }
 
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     *     int val;
+     *     TreeNode left;
+     *     TreeNode right;
+     *     TreeNode() {}
+     *     TreeNode(int val) { this.val = val; }
+     *     TreeNode(int val, TreeNode left, TreeNode right) {
+     *         this.val = val;
+     *         this.left = left;
+     *         this.right = right;
+     *     }
+     * }
+     */
     static class Solution {
         List<Integer> op;
 
@@ -47,24 +62,23 @@ public class Solution94 {
             recursive(root.right);
         }
 
-        private void iterative(TreeNode root) {
+        private void iterative(TreeNode root){
 
-            Stack<TreeNode> treeNodes = new Stack<>();
+            Stack<TreeNode> treeNodes =  new Stack<>();
 
-            treeNodes.add(root);
-
-            while (!treeNodes.empty()) {
-                TreeNode item = treeNodes.pop();
-                if (item != null) {
-                    op.add(item.val);
-                    treeNodes.add(item.right);
-                    treeNodes.add(item.left);
+            TreeNode item=root ;
+            while (item!=null || !treeNodes.empty()){
+                while(item!=null){
+                    treeNodes.push(item);
+                    item=item.left;
                 }
+                item = treeNodes.pop();
+                op.add(item.val);
+                item =item.right;
             }
 
         }
     }
-
     public static void main(String[] args) {
         Solution solution
                 = new Solution();
