@@ -59,7 +59,7 @@ public class Solution1302 {
             val.add(root.val);
             map.put(height, val);
             findLeaveSum(root.left, height + 1);
-            findLeaveSum(root.left, height + 1);
+            findLeaveSum(root.right, height + 1);
         }
 
     }
