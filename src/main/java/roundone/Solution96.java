@@ -29,23 +29,23 @@ public class Solution96 {
             if (upper != null && root.val >= upper) {
                 return false;
             }
-            if(!isValid(root.right, root.val,upper )) return false;
-            if(!isValid(root.left, lower, root.val)) return false;
+            if (!isValid(root.right, root.val, upper)) return false;
+            if (!isValid(root.left, lower, root.val)) return false;
             return true;
         }
-    }
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        String line;
-        while ((line = in.readLine()) != null) {
-            TreeNode root = stringToTreeNode(line);
+        public static void main(String[] args) throws IOException {
+            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+            String line;
+            while ((line = in.readLine()) != null) {
+                TreeNode root = stringToTreeNode(line);
 
-            boolean ret = new Solution().isValidBST(root);
+                boolean ret = new Solution().isValidBST(root);
 
-            String out = booleanToString(ret);
+                String out = booleanToString(ret);
 
-            System.out.print(out);
+                System.out.print(out);
+            }
         }
     }
 }
