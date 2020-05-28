@@ -2,6 +2,7 @@ package roundone;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class Solution589 {
     class Node {
@@ -25,15 +26,33 @@ public class Solution589 {
     class Solution {
         List<Integer> ans;
 
-        public List<Integer> preorder(Node root) {
 
+
+        Stack<Node> nodes ;
+
+        public List<Integer> preorder(Node root) {
+            nodes =  new Stack<>();
             ans = new ArrayList<>();
             if (root != null) {
-                ans.add(root.val);
-                solve(root);
+                nodes.add(root);
+                iterative();
             }
 
             return ans;
+        }
+
+        private void iterative() {
+
+
+            while (!nodes.empty()){
+                Node item = nodes.pop();
+                if(item!=null){
+                    ans.add(item.val);
+                    for(int i = item.children.size()-1;i>=0;i--){
+                        nodes.add(item.children.get(i));
+                    }
+                }
+            }
         }
 
         private void solve(Node root) {
