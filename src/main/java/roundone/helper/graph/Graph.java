@@ -1,9 +1,6 @@
 package roundone.helper.graph;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Graph<T> {
 
@@ -46,5 +43,25 @@ public class Graph<T> {
 
     public void addEdge(T src, T des) {
         this.addEdge(src, des, 0);
+    }
+
+    public List<Edge> getEdgesList() {
+        return edgesList;
+    }
+
+    public boolean isDirected() {
+        return isDirected;
+    }
+
+    public boolean isWighted() {
+        return isWighted;
+    }
+
+    public Collection<Vertex<T>> getAllVertex() {
+        return vertexMap.values();
+    }
+
+    public Vertex<T> getVertex(T k) {
+        return vertexMap.get(k);
     }
 }
