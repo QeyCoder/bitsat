@@ -1,10 +1,11 @@
 package roundone;
 
+import roundone.helper.TreeNode;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import static roundone.MainClass.booleanToString;
 import static roundone.MainClass.stringToTreeNode;
 
 public class Solution701 {
