@@ -29,7 +29,7 @@ public class Graph<T> {
         if (vertexMap.containsKey(des)) {
             destVertex = vertexMap.get(des);
         } else {
-            destVertex = new Vertex<>(src);
+            destVertex = new Vertex<>(des);
             vertexMap.put(des, destVertex);
         }
         Edge<T> edge = new Edge<>(srcVertex, destVertex, weight, this.isDirected);
