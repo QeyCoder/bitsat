@@ -1,28 +1,12 @@
 package roundone;
 
+import roundone.helper.TreeNode;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
 //https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/
 public class Solution1161 {
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
 
     public int maxLevelSum(TreeNode root) {
