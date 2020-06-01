@@ -1,4 +1,4 @@
-package day41;
+package roundzero.day41;
 
 import java.util.Scanner;
 
