@@ -2,6 +2,7 @@ package roundone.helper.graph;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Vertex<T> {
 
@@ -34,5 +35,17 @@ public class Vertex<T> {
     @Override
     public String toString() {
         return "Vertex{" + val + "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        Vertex<?> vertex = (Vertex<?>) o;
+        return val == vertex.val;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(val);
     }
 }
