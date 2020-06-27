@@ -28,21 +28,18 @@ public class CodeForce1373C {
             }
         }
 
+        long data = 1;
+        long ans = 0;
+        for (int i = 0; i <= tmp.length; i++) {
+            if (i != tmp.length && tmp[i] == -data) {
+                ans += i + 1;
+                data++;
 
-        int j = -1;
-        int ans = 0;
-        boolean found = false;
-        while (!found) {
-            int x = 0;
-            while (x < tmp.length && tmp[x] != j) {
-                x++;
+            } else if(i== tmp.length){
+                ans += tmp.length;
             }
-            if (x == tmp.length) {
-                found = true;
-            }
-            ans += x+1;
-            j--;
+
         }
-        System.out.println(ans-1);
+        System.out.println(ans);
     }
 }
