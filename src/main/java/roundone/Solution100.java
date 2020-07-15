@@ -2,11 +2,6 @@ package roundone;
 
 import roundone.helper.TreeNode;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
-
 public class Solution100 {
 
 
@@ -19,6 +14,7 @@ public class Solution100 {
      *     TreeNode() {}
      *     TreeNode(int val) { this.val = val; }
      *     TreeNode(int val, TreeNode left, TreeNode right) {
+     *     `
      *         this.val = val;
      *         this.left = left;
      *         this.right = right;
